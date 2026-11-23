@@ -26,26 +26,15 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Inter';
-    src: url('./fonts/Inter-Bold.ttf') format('truetype');
-    font-weight: 700; /* Bold */
-    font-style: normal;
-}
 
 @font-face {
     font-family: 'Segoe UI';
     src: url('./fonts/SegoeUI.ttf') format('truetype');
-    font-weight: 400; /* Regular */
+    font-weight: 700; /* Regular */
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Segoe UI';
-    src: url('./fonts/SegoeUI-Bold.ttf') format('truetype');
-    font-weight: 700; /* Bold */
-    font-style: normal;
-}
+
 
 body {
   max-width: 100%;
