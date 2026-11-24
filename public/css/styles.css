@@ -21,16 +21,16 @@
 
 @font-face {
     font-family: 'Inter';
-    src: url('./fonts/Inter-Regular.ttf') format('truetype');
-    font-weight: 400; /* Regular */
+    src: url('../fonts/Inter-Regular.ttf') format('truetype');
+    font-weight: 400; 
     font-style: normal;
 }
 
 
 @font-face {
-    font-family: 'Segoe UI';
-    src: url('./fonts/SegoeUI.ttf') format('truetype');
-    font-weight: 700; /* Regular */
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Bold.ttf') format('truetype');
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -53,7 +53,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 700;
   line-height: 1.2;
   margin: 0 0 16px;
@@ -819,13 +819,6 @@ img {
     grid-template-columns: 1fr 1fr;
   }
 }
-/*
-@media (max-width: 600px) {
-   .playbook-grid {
-    grid-template-columns: 1fr;
-  }
-}
-*/
 
 @media (max-width: 480px) {
   body {
