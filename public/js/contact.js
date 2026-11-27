@@ -1,6 +1,20 @@
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('form-status');
 
+let formLoadTime = Date.now();
+
+form.addEventListener('submit', function(event) {
+    
+    let formSubmitTime = Date.now();
+    let timeTaken = (formSubmitTime - formLoadTime) / 1000; 
+    
+    let dupe = document.getElementById('dupe').value;
+
+    if (timeTaken < 3 || dupe) {
+        event.preventDefault(); 
+    }
+  })
+
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
 
