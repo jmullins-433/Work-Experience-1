@@ -1,8 +1,28 @@
 const form = document.getElementById('contact-form');
 const statusEl = document.getElementById('form-status');
 
+let formLoadTime = Date.now();
+
 form.addEventListener('submit', async (event) => {
-  event.preventDefault();
+    event.preventDefault(); 
+
+    const honeypotField = document.getElementById('dupe'); 
+    if (honeypotField.value) {
+        
+        event.preventDefault(); 
+        statusEl.textContent = "Thanks, we'll be in touch within one business day.";
+        return; 
+    }
+
+    let formSubmitTime = Date.now();
+    let timeTaken = (formSubmitTime - formLoadTime) / 1000; 
+    
+    let dupe = document.getElementById('dupe').value;
+
+    if (timeTaken < 3 || dupe) {
+        event.preventDefault(); 
+        statusEl.textContent = "Thanks, we'll be in touch within one business day.";
+    } 
 
   const button = form.querySelector('button[type="submit"]');
   button.disabled = true;
@@ -20,7 +40,7 @@ form.addEventListener('submit', async (event) => {
     const result = await response.json();
 
     if (!result.ok) {
-      throw new Error(result.error || 'Something went wrong.');
+     throw new Error(result.error || 'Something went wrong.');
     }
 
     form.reset();
